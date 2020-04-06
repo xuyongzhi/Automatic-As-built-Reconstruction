@@ -1,0 +1,32 @@
+DEBUG:
+  eval_in_train: 10
+  eval_in_train_per_iter: -1
+INPUT:
+  ELEMENTS: ['xyz', 'color']
+  CLASSES: ['background', 'wall', 'door', 'window']
+  SCENES: ['1room']
+MODEL:
+  CORNER_ROI: False
+  RPN:
+    USE_YAWS: [0,0,0]
+    YAW_THRESHOLD: 3.0
+    ANCHOR_SIZES_3D: [ [0.3,0.3,3], [0.6,0.6,3], [1.2,1.2,3] ]
+    #ANCHOR_SIZES_3D: [ [0.2,0.5,3], [0.4,1.5,3], [0.6,2.5,3] ]
+    RATIOS: [[0.1,2,1],[2,0.1,1],[0.1,4,1],[4,0.1,1]]
+    YAWS: (0, -1.57, -0.785, 0.785) # incorrect
+    RPN_SCALES_FROM_TOP: [5,4,3]
+    RPN_3D_2D_SELECTOR: [3,4,5] # 2d only
+SOLVER:
+  EPOCHS: 200
+  EPOCHS_BETWEEN_TEST: 50
+  IMS_PER_BATCH: 1
+  BASE_LR: 0.02
+  WEIGHT_DECAY: 0.000
+  LR_STEP_EPOCHS: (100,)
+  CHECKPOINT_PERIOD_EPOCHS: 50
+  WARMUP_EPOCHS: 0.1
+  TRACK_RUNNING_STATS: False
+OUTPUT_DIR: "RES/res_wall_Fpn432_bs1_lr20"
+TEST:
+  IMS_PER_BATCH: 1
+  IOU_THRESHOLD: 0.3

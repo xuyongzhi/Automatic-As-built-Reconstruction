@@ -1,0 +1,23 @@
+DEBUG:
+  eval_in_train: 10
+  eval_in_train_per_iter: -1
+INPUT:
+  ELEMENTS: ['xyz', 'color']
+  CLASSES: ['background', 'wall']
+  #  SCENES: ['area_1_1'] 
+MODEL:
+  CORNER_ROI: False
+SOLVER:
+  EPOCHS: 200
+  EPOCHS_BETWEEN_TEST: 20
+  IMS_PER_BATCH: 1
+  BASE_LR: 0.005
+  WEIGHT_DECAY: 0.000
+  LR_STEP_EPOCHS: (100,)
+  CHECKPOINT_PERIOD_EPOCHS: 10
+  WARMUP_EPOCHS: 0.2
+  TRACK_RUNNING_STATS: False
+OUTPUT_DIR: "RES/res_stf_wall_Fpn4321_bs1_lr5"
+TEST:
+  IMS_PER_BATCH: 1
+  IOU_THRESHOLD: 0.3

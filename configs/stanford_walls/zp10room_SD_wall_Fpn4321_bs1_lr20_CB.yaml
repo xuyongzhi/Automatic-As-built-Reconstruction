@@ -1,0 +1,25 @@
+DEBUG:
+  eval_in_train: 10
+  eval_in_train_per_iter: -1
+INPUT:
+  ELEMENTS: ['xyz', 'color']
+  CLASSES: ['background', 'wall']
+#  SCENES: ['test1']
+  SCENES: ['10room']
+
+MODEL:
+  CORNER_ROI: False
+SOLVER:
+  EPOCHS: 200
+  EPOCHS_BETWEEN_TEST: 200
+  IMS_PER_BATCH: 1
+  BASE_LR: 0.02
+  WEIGHT_DECAY: 0.000
+  LR_STEP_EPOCHS: (50,)
+  CHECKPOINT_PERIOD_EPOCHS: 50
+  WARMUP_EPOCHS: 0.1
+  TRACK_RUNNING_STATS: False
+OUTPUT_DIR: "RES/res_zp10room_stf_wall_Fpn4321_bs1_lr20"
+TEST:
+  IMS_PER_BATCH: 1
+  IOU_THRESHOLD: 0.3

@@ -1,0 +1,24 @@
+DEBUG:
+  eval_in_train: 1
+  eval_in_train_per_iter: -1
+INPUT:
+  CLASSES: ['background', 'wall', 'door', 'window', 'ceiling', 'floor']
+  #SCENES: ['0058113bdc8bee5f387bb5ad316d7b28', '00922f91aa09dbdda3a74489ea0e21eb']
+MODEL:
+  SEPARATE_CLASSES: [['wall'], ['ceiling','floor']]
+  ROI__ONLY: False
+  CORNER_ROI: False
+SOLVER:
+  EPOCHS: 20
+  EPOCHS_BETWEEN_TEST: 2
+  IMS_PER_BATCH: 1
+  BASE_LR: 0.01
+  WEIGHT_DECAY: 0.000
+  LR_STEP_EPOCHS: (10,)
+  CHECKPOINT_PERIOD_EPOCHS: 2
+  WARMUP_EPOCHS: 0.01
+  TRACK_RUNNING_STATS: False
+OUTPUT_DIR: "RES/res_3g6c_Fpn4321_bs1_lr10"
+TEST:
+  IMS_PER_BATCH: 1
+  IOU_THRESHOLD: 0.3
