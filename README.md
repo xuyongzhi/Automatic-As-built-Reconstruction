@@ -14,6 +14,8 @@ Train or test by modifying and running the script ["./run.sh"](./run.sh).
 
 # Data preparation
 The dataset is modified from SUNCG by the processing functions in: ./data3d/suncg_utils/suncg_preprocess.py  
+Some data samples can be downloaded in https://unsw-my.sharepoint.com/:f:/g/personal/z5105843_ad_unsw_edu_au/EtCliIZlMbFAotFQruB_bqYBsdAKxcJmk2TGJDOdNHGjNQ?e=PXjKmG
+The training model is available in https://unsw-my.sharepoint.com/:f:/g/personal/z5105843_ad_unsw_edu_au/EqihMsW90rZKnWLM8fT-SI4B_3ueak_0TP66bLgBU_mm2Q?e=owjPb2
 
 # Assumption
 * Shortest wall instance: Long wall pieces are croped by intersected ones to generate short instances.
